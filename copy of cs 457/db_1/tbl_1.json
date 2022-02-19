@@ -1,0 +1,11 @@
+[
+    {
+        "datatype": "int"
+    },
+    {
+        "datatype": "varchar(20)"
+    },
+    {
+        "datatype": "float"
+    }
+]

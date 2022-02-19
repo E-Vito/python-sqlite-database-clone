@@ -1,0 +1,25 @@
+{
+    "Queries": [
+        {
+            "type": "CREATE",
+            "format": {
+                "DATABASE": {
+                    "DB_Name": null
+                },
+                "TABLE": {
+                    "tableName": "tb1",
+                    "variables": [
+                        {
+                            "name": "a1",
+                            "datatype":  "int"
+                        },
+                        {
+                            "name": "a2",
+                            "datatype": "varchar(20)"
+                        }
+                    ]
+                }
+            }
+        },
+    ]
+}

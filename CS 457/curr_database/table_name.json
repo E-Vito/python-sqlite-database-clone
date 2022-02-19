@@ -1,0 +1,8 @@
+[
+    {
+        "datatype": "int"
+    },
+    {
+        "datatype": "varchar(20)"
+    }
+]

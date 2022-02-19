@@ -1,0 +1,15 @@
+{
+    "type": "CREATE",
+    "request": null,
+    "format": {
+        "DATABASE": {
+            "name": null
+        },
+        "TABLE": {
+            "name": null,
+            "variables": [
+
+            ]
+        }
+    }
+}

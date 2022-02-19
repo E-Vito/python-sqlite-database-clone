@@ -1,0 +1,16 @@
+{
+    "type": "ALTER TABLE",
+    "request": null,
+    "format":
+    {
+        "ADD":
+        {
+            "name": null,
+            "variables": 
+            [
+                
+            ]
+        }
+    }
+
+}

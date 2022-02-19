@@ -1,0 +1,242 @@
+{
+    "Queries": [
+        {
+            "type": "CREATE",
+            "request": "DATABASE",
+            "format": {
+                "DATABASE": {
+                    "name": "db_1"
+                },
+                "TABLE": {
+                    "name": null,
+                    "variables": []
+                }
+            }
+        },
+        {
+            "type": "CREATE",
+            "request": "DATABASE",
+            "format": {
+                "DATABASE": {
+                    "name": "db_1"
+                },
+                "TABLE": {
+                    "name": null,
+                    "variables": []
+                }
+            }
+        },
+        {
+            "type": "CREATE",
+            "request": "DATABASE",
+            "format": {
+                "DATABASE": {
+                    "name": "db_2"
+                },
+                "TABLE": {
+                    "name": null,
+                    "variables": []
+                }
+            }
+        },
+        {
+            "type": "DROP",
+            "request": "DATABASE",
+            "name": "db_2"
+        },
+        {
+            "type": "DROP",
+            "request": "DATABASE",
+            "name": "db_2"
+        },
+        {
+            "type": "CREATE",
+            "request": "DATABASE",
+            "format": {
+                "DATABASE": {
+                    "name": "db_2"
+                },
+                "TABLE": {
+                    "name": null,
+                    "variables": []
+                }
+            }
+        },
+        {
+            "type": "USE",
+            "name": "db_1"
+        },
+        {
+            "type": "CREATE",
+            "request": "TABLE",
+            "format": {
+                "DATABASE": {
+                    "name": null
+                },
+                "TABLE": {
+                    "name": "tbl_1",
+                    "variables": [
+                        {
+                            "name": "a1",
+                            "datatype": "int"
+                        },
+                        {
+                            "name": "a2",
+                            "datatype": "varchar(20)"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "CREATE",
+            "request": "TABLE",
+            "format": {
+                "DATABASE": {
+                    "name": null
+                },
+                "TABLE": {
+                    "name": "tbl_1",
+                    "variables": [
+                        {
+                            "name": "a3",
+                            "datatype": "float"
+                        },
+                        {
+                            "name": "a4",
+                            "datatype": "char(20)"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "DROP",
+            "request": "TABLE",
+            "name": "tbl_1"
+        },
+        {
+            "type": "DROP",
+            "request": "TABLE",
+            "name": "tbl_1"
+        },
+        {
+            "type": "CREATE",
+            "request": "TABLE",
+            "format": {
+                "DATABASE": {
+                    "name": null
+                },
+                "TABLE": {
+                    "name": "tbl_1",
+                    "variables": [
+                        {
+                            "name": "a1",
+                            "datatype": "int"
+                        },
+                        {
+                            "name": "a2",
+                            "datatype": "varchar(20)"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "SELECT",
+            "allColumns": true,
+            "columns": [],
+            "tableName": "tbl_1"
+        },
+        {
+            "type": "ALTER TABLE",
+            "request": "TABLE",
+            "format": {
+                "ADD": {
+                    "name": "tbl_1",
+                    "variables": [
+                        {
+                            "name": "a3",
+                            "datatype": "float"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "SELECT",
+            "allColumns": true,
+            "columns": [],
+            "tableName": "tbl_1"
+        },
+        {
+            "type": "CREATE",
+            "request": "TABLE",
+            "format": {
+                "DATABASE": {
+                    "name": null
+                },
+                "TABLE": {
+                    "name": "tbl_2",
+                    "variables": [
+                        {
+                            "name": "a3",
+                            "datatype": "float"
+                        },
+                        {
+                            "name": "a4",
+                            "datatype": "char(20)"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "SELECT",
+            "allColumns": true,
+            "columns": [],
+            "tableName": "tbl_2"
+        },
+        {
+            "type": "USE",
+            "name": "db_2"
+        },
+        {
+            "type": "SELECT",
+            "allColumns": true,
+            "columns": [],
+            "tableName": "tbl_1"
+        },
+        {
+            "type": "CREATE",
+            "request": "TABLE",
+            "format": {
+                "DATABASE": {
+                    "name": null
+                },
+                "TABLE": {
+                    "name": "tbl_1",
+                    "variables": [
+                        {
+                            "name": "a3",
+                            "datatype": "float"
+                        },
+                        {
+                            "name": "a4",
+                            "datatype": "char(20)"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "SELECT",
+            "allColumns": true,
+            "columns": [],
+            "tableName": "tbl_1"
+        },
+        {
+            "type": "EXIT"
+        }
+    ]
+}
