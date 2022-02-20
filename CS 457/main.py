@@ -59,6 +59,7 @@ for i in range(len(queries)): #loop through all queries
                     print(f"!Failed to delete {table_name} because it does not exist.")
                 else:
                     os.remove(curr_database + "/" + table_name + ".csv")
+                    os.remove(curr_database + "/" + table_name + ".json")
                     print(f"Table {table_name} deleted.")
 
         case 'USE':
