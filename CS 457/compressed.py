@@ -52,7 +52,6 @@ def format_json(commands, file_name):
     with open(file_name, "w") as f:
         json.dump(query_json, f, indent=4)
 
-
 def format_create_query(token_list): 
     """This function formats a SQL CREATE query into a JSON file
 
