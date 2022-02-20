@@ -5,8 +5,10 @@ import json
 import shutil
 import os
 
-if len(sys.argv) == 2: #pass in the file name as cmd line argument
-    file_name = sys.argv[1]
+# if len(sys.argv) == 2: #pass in the file name as cmd line argument
+#     file_name = sys.argv[1]
+
+file_name = 'PA1_test.sql'
 
 curr_database = None #the current database in use
 command_list = form.format_command(file_name)#create command list from SQL file
