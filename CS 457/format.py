@@ -8,7 +8,7 @@ def format_command(file_name):
         file_name (.sql): A SQL file with 
 
     Returns:
-        list: a list of tokenized SQL queries, each index representing one query
+        command_list: a list of tokenized SQL queries, each index representing one query
     """
     command_list = []
     with open(file_name, "r") as f:
@@ -46,6 +46,14 @@ def format_json(commands, file_name):
 
 
 def format_create_query(token_list): 
+    """This function formats a SQL CREATE query into a JSON file
+
+    Args:
+        token_list (list): a list with a tokenized SQL query
+
+    Returns:
+        data: a dictionary with all the information about a CREATE DATABASE or CREATE TABLE query
+    """
     if token_list[1] == 'DATABASE':
         with open("data/query formats/create_query.json", "r") as f: #open default create json to format new input
             data = json.load(f)
