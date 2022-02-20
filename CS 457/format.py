@@ -1,7 +1,15 @@
 import json
 import re
 
-def format_command(file_name): #formats commands into list 
+def format_command(file_name): 
+    """This function takes an SQL file and tokenizes each query into a list
+
+    Args:
+        file_name (.sql): A SQL file with 
+
+    Returns:
+        list: a list of tokenized SQL queries, each index representing one query
+    """
     command_list = []
     with open(file_name, "r") as f:
         for line in f: #iterate over each line in the file
@@ -9,7 +17,13 @@ def format_command(file_name): #formats commands into list
                 command_list.append(list(filter(None,re.split(', |\s|;+|\((.+)\)', line))))#add tokenized query as a single element in a list
     return command_list
 
-def format_json(commands, file_name):#formats all queries into one json file
+def format_json(commands, file_name):
+    """This functions writes out SQL queries to a JSON file
+
+    Args:
+        commands (list): a list of tokenized SQL queries, each index representing one query
+        file_name (.json): A JSON file that will store each SQL query
+    """
     query_json = { "Queries": []}
     for i in range(len(commands)):
         
