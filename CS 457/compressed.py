@@ -1,3 +1,8 @@
+'''
+Author: Ethan Vito
+Date: 2/19/2022
+'''
+
 import csv
 import sys
 import json
@@ -87,6 +92,14 @@ def format_create_query(token_list):
         return data
 
 def format_drop_query(token_list):
+    """This function formats a SQL DROP query into a JSON file
+
+    Args:
+        token_list (list): a list with a tokenized SQL query
+
+    Returns:
+        data: a dictionary with all the information about a DROP query
+    """
     if token_list[1] == 'DATABASE':
         with open("data/query formats/drop_query.json", "r") as f: #open default create json to format new input
             data = json.load(f)
@@ -106,6 +119,14 @@ def format_drop_query(token_list):
         return data
 
 def format_use_query(token_list):
+    """This function formats a SQL USE query into a JSON file
+
+    Args:
+        token_list (list): a list with a tokenized SQL query
+
+    Returns:
+        data: a dictionary with all the information about a USE query
+    """
     with open("data/query formats/use_query.json", "r") as f: #open default create json to format new input
         data = json.load(f)
     
@@ -114,6 +135,14 @@ def format_use_query(token_list):
     return data
 
 def format_alter_query(token_list):
+    """This function formats a SQL ALTER query into a JSON file
+
+    Args:
+        token_list (list): a list with a tokenized SQL query
+
+    Returns:
+        data: a dictionary with all the information about a ALTER query
+    """
     with open("data/query formats/alter_query.json", "r") as f:
         data = json.load(f)
 
@@ -130,6 +159,14 @@ def format_alter_query(token_list):
     return data
 
 def format_select_query(token_list):
+    """This function formats a SQL SELECT query into a JSON file
+
+    Args:
+        token_list (list): a list with a tokenized SQL query
+
+    Returns:
+        data: a dictionary with all the information about a SELECT query
+    """
     with open("data/query formats/select_query.json", "r") as f:
         data = json.load(f)
     
@@ -140,6 +177,11 @@ def format_select_query(token_list):
     return data
     
 def get_query_list():
+    """This function takes all the SQL queries that have been formatted into a json and loads converts them into an equivalent python data structure
+
+    Returns:
+        json.load(f): the sql query converted from JSON into python equivalent data
+    """
     with open("data/query_list.json", "r") as f:
         return json.load(f)
 
@@ -183,10 +225,10 @@ for i in range(len(queries)): #loop through all queries
         case 'DROP':
             if queries[i]['request'] == 'DATABASE':
                 db_name = queries[i]['name']
-                if not os.path.isdir(db_name):
+                if not os.path.isdir(db_name):#check if the database exists as a directory
                     print(f"!Failed to delete {db_name} because it does not exist.")
                 else:
-                    shutil.rmtree(db_name)
+                    shutil.rmtree(db_name)#this command removes a directory and all the files within it
                     print(f"Database {db_name} deleted.")
             elif queries[i]['request'] == 'TABLE':
                 table_name = queries[i]['name']
@@ -198,7 +240,7 @@ for i in range(len(queries)): #loop through all queries
                     print(f"Table {table_name} deleted.")
 
         case 'USE':
-            db_name = queries[i]['name']
+            db_name = queries[i]['name'] 
 
             if not os.path.isdir(db_name):
                 print(f"!Failed to select database {db_name} because it does not exist.")
@@ -240,13 +282,13 @@ for i in range(len(queries)): #loop through all queries
                         variable_list = json.load(json_table_file)
                     with open(curr_database + "/" + table_name + ".csv", 'r') as csv_table_file:
                         csv_reader = csv.reader(csv_table_file)
-                        rows = list(csv_reader) 
+                        rows = list(csv_reader) #read in all the rows from the csv and convert to a list.
                         rows[0].append(queries[i]['format']['ADD']['variables'][0]['name']) #add the new variable to the end of the field list
                     with open(curr_database + "/" + table_name + ".csv", 'w') as csv_table_file:
                         csv_writer = csv.writer(csv_table_file)
                         csv_writer.writerows(rows) #write back all the data to the csv.
                     with open(curr_database + "/" + table_name + ".json", 'w') as json_table_file:
-                        variable_list.append({"datatype": queries[i]['format']['ADD']['variables'][0]['datatype']})
+                        variable_list.append({"datatype": queries[i]['format']['ADD']['variables'][0]['datatype']}) #this will write the fields corresponding datatypes into a dictionary.
                         json.dump(variable_list, json_table_file, indent=4)
                     print(f"Table {table_name} modified.")
         case 'EXIT':
